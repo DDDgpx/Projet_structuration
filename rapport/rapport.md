@@ -37,7 +37,7 @@ Par ailleurs, en étant des étudiants du master de spécialisation en TSI, et c
 
 Afin de répondre aux objectifs précités, nous avons contacté l’entreprise CPCU afin de nous permettre de découvrir de près le métier de la distribution de la chaleur en Ile-de-France et d’étudier l’architecture de son système d’information.
 
-À travers ce rapport, nous résumons les péripéties du projet en  commençant  par détailler le contexte du projet,  nous enchainerons par la  présentation du travail de modélisation effectué et nous  finirons par une analyse des points de faiblesse constatés et des suggestions d’amélioration du système actuel.
+À travers ce rapport, nous résumons les péripéties du projet en  commençant  par détailler le contexte du projet,  nous enchaînerons par la  présentation du travail de modélisation effectué et nous  finirons par une analyse des points de faiblesse constatés et des suggestions d’amélioration du système actuel.
 
  \newpage
  
@@ -48,7 +48,7 @@ Afin de répondre aux objectifs précités, nous avons contacté l’entreprise 
 Opérateur de réseau de chaleur urbain en métropole parisienne, CPCU produit, transporte et distribue de la chaleur pour répondre aux besoins de chauffage et d’eau chaude sanitaire de l’habitat et du tertiaire public ou privé dans Paris et en proche périphérie.
 Entreprise publique locale, filiale de la Ville de Paris et du Groupe GdF-Suez, CPCU est un acteur privilégié du Plan Climat de la Ville de Paris et de l’aménagement urbain durable grâce à son bouquet énergétique favorisant les énergies locales, renouvelables et de récupération.
 
-![réseau](organisme1.png "")
+![Les réseaux CPCU](organisme1.png "")
 
 ###CPCU en chiffre :
 
@@ -59,9 +59,9 @@ Entreprise publique locale, filiale de la Ville de Paris et du Groupe GdF-Suez, 
 - 475 km de réseau,
 - 17 communes desservies,
 - 19 boucles d’eau chaude,
-- 500 000 équivalents logements pour Paris dont presque 60 000 dans le 15eme arrondissement.
+- 500 000 équivalents logements pour Paris dont presque 60 000 dans le 15ème arrondissement.
 
-![réseau](organisme2.png "")
+![Collaborateurs CPCU](organisme2.png "")
 
 ##Périmètre du projet
 
@@ -197,7 +197,7 @@ C’est un dispositif électronique programmable logé dans des chambres sur le 
 Il se charge aussi d’alimenter le système de supervision par la communication des informations collectées par les capteurs.
 
 - Star Apic :
-Le système d’information Géographique utilisé par CPCU pour la représentation du capital informationnel relatif au réseau. C’est un logiciel propriétaire de l’entreprise Star Apic (1patial maintenant)
+Le système d’information Géographique utilisé par CPCU pour la représentation du capital informationnel relatif au réseau. C’est un logiciel propriétaire de l’entreprise Star Apic (1spatial maintenant)
 
 - Cimplicity : 
 Progiciel de supervision. C’est le logiciel qui accueille et traite les informations acquises sur l’état du réseau en temps réel. C’est la fenêtre principale à travers laquelle le dispatcher surveille le réseau. Il permet aussi de lever des alertes quand des il y a des anomalies dans le réseau. 
@@ -208,7 +208,7 @@ Le progiciel est un produit de GE.
 
 ###1. Dictionnaire des classes
 
-Nous définisons ci-dessous les classes métier évoquées dans le modèle de données considéré.
+Nous définissons ci-dessous les classes métier évoquées dans le modèle de données considéré.
 
 -	Réseau :
 Ensemble interconnecté de points de production, des supports de transport et des postes de livraison. C'est le réseau de distribution dit réseau primaire, il est scindé en tronçons de réseau.
@@ -256,11 +256,11 @@ Ouvrage Installé coté client, constitué de l'ensemble des équipements jouant
 Ouvrage en maçonnerie ou en béton  servant à l'évacuation des eaux, il est équipé de pompes pour renvoyer les eaux au réseau d'évacuation du bâtiment.
 
 -	Purgeur :
-Elément servant à évacuer le condensat sans laisser échapper de vapeur, il est installé aux points bas pour extraire et évacuer automatiquement les condensats produits par les déperditions
+Élément servant à évacuer le condensat sans laisser échapper de vapeur, il est installé aux points bas pour extraire et évacuer automatiquement les condensats produits par les déperditions
 thermiques de la tuyauterie.
 
 -	Automate :
-Elément de télésurveillance relevant en permanence des mesures et les transmettant au centre de surveillance. Il permet de suivre le bon fonctionnement du réseau et de signaler des anomalies.
+Élément de télésurveillance relevant en permanence des mesures et les transmettant au centre de surveillance. Il permet de suivre le bon fonctionnement du réseau et de signaler des anomalies.
 
 -	Client :
 Consommateur de la chaleur principalement pour le chauffage et l'eau chaude sanitaire.
@@ -271,7 +271,7 @@ Grandeur mesurée à l'aide de capteurs dédiés de pression, température, déb
 -	PH-mètre :
 Instrument de mesure du ph de la vapeur d'eau.
 
--	Echangeur :
+-	Échangeur :
 Dispositif permettant l'échange de chaleur entre deux fluides à travers une surface, il permet  d'extraire de la chaleur à la vapeur d'eau et de la transférer à l'eau de l'installation secondaire. L’échange thermique s’opère sans contact entre les deux fluides
 
 -	Bâche :
@@ -344,7 +344,7 @@ Nous résumons l’architecture proposée dans le schéma simplifié suivant :
 L’architecture ainsi proposée sera caractérisée principalement par :
 
 - Accès à la donnée via différent outils : Idéalement le nouveau service devrait pouvoir fournir les données nécessaires aux outils de production et de gestion adoptée par l’entreprise (Cimplicity, Pi …)  Un format d’échange serait probablement indispensable afin de garder une transparence vis-à-vis de l’outil qui requête le service.
-- Accès à partir de différentes  plateformes : Le service devrait être accessible en mode mobile par des intervenants sur terrain ou à partir des postes des différents services de l’entreprise.
+- Accès à partir de différentes  plates-formes : Le service devrait être accessible en mode mobile par des intervenants sur terrain ou à partir des postes des différents services de l’entreprise.
 - Connexion à base de rôle (RBAC) : étant donné que les acteurs du système sont multiples, il serait judicieux de prévoir un système de distinction des services et des droits proposé à l’utilisateur en fonction de son rôle dans le système. Ainsi, par exemple, le droit de modification de l’état d’un tronçon serait une fonctionnalité proposé exclusivement à un dispatcher ou un agent du bureau technique…
 
 En revanche, cette proposition a certainement des points de faiblesse qui s’imposent et doivent être gérés, notamment en terme de sécurité et de conformité. En effet, les données des réseaux de la CPCU sont extrêmement sensibles et le fait de les mettre dans un Cloud, privé ou public, pourrait été complexe si l’on ne met pas en place des dispositifs rigoureux pour maintenir les données et les traitements métiers en sécurité.
@@ -367,7 +367,7 @@ La réalisation du présent travail est passée principalement par quatre étape
 
 3)Analyse et modélisation : Restitution des entretiens et examen des documents de l’entreprise. Traduction du système en diagrammes UML.
 
-4)Documentation : Elaboration des livrables du projet  (rapport et support de présentation) et apprentissage du langage MarkDown  
+4)Documentation : Élaboration des livrables du projet  (rapport et support de présentation) et apprentissage du langage MarkDown  
 
 \newpage
 
