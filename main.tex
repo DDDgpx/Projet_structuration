@@ -1,0 +1,45 @@
+\documentclass[t,french]{beamer} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usetheme{Berkeley}                 
+\setbeamertemplate{navigation symbols}{}
+\title{Projet de structuration et d'architecture}
+\subtitle{Système de gestion des anomalies des réseaux de chaleur de CPCU}
+\author{Hanane ELJABIRI \& Hatim LAMGHARI}
+\institute{ENSG}
+\date{14 Janvier 2016}
+
+
+% enables straight single quote
+\makeatletter
+\let \@sverbatim \@verbatim
+\def \@verbatim {\@sverbatim \verbatimplus}
+{\catcode`'=13 \gdef \verbatimplus{\catcode`'=13 \chardef '=13 }} 
+\makeatother
+
+% enables backticks in verbatim
+\makeatletter
+{\catcode`\`=13
+\xdef\@verbatim{\unexpanded\expandafter{\@verbatim}\chardef\noexpand`=18 }
+}
+\makeatother
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\begin{itemize}
+\item 	\url{https://github.com/HEljabiri/Projet_structuration}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Le plan}
+\tableofcontents
+\end{frame}
+
+\input{"my_talk.tex"}
+
+\end{document}
+
